@@ -16,9 +16,20 @@ export class RacingView{
         );
         return tryCountInput;
     }
+    
+    printExecutionResultTitle(){
+        Console.print('\n실행 결과');
+    }
 
     printEachCarPosition(car) {
         const distanceString = '-'.repeat(car.position);
         Console.print(`${car.name} : ${distanceString}`);
+    }
+
+    printRoundCarPosition(carList){
+        for(const car of carList){
+            this.printEachCarPosition(car);
+        }
+        Console.print('\n');
     }
 }

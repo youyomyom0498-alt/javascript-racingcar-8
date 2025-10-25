@@ -16,8 +16,10 @@ export class RacingController {
     }
 
     runGame () {
+        this.view.printExecutionResultTitle();
         for(let round = 0; round < this.game.tryCount; round ++){
             this.game.runRound();
+            this.view.printRoundCarPosition(this.game.carList);
         }
 
         const winnerList = this.game.getWinners();
