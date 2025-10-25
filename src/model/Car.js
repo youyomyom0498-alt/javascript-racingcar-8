@@ -8,12 +8,10 @@ export class Car {
 
     move() {
         const randomNumber = Random.pickNumberInRange(0, 9);
-        let move = false;
         if(randomNumber >= 4){
-            move = true;
-        } else {
-            move = false;
+            this.position ++;
         }
-        return move;
+
+        console.log(this.position);
     }
 }
