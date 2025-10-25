@@ -32,4 +32,9 @@ export class RacingView{
         }
         Console.print('\n');
     }
+
+    printWinners(winnerList){
+        const winnerNameList = winnerList.map(car => car.name);
+        Console.print(`최종 우승자 : ${winnerNameList.join(', ')}`);
+    }
 }

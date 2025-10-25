@@ -23,5 +23,6 @@ export class RacingController {
         }
 
         const winnerList = this.game.getWinners();
+        this.view.printWinners(winnerList);
     }
 }
