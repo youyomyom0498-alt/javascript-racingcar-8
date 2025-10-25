@@ -19,5 +19,7 @@ export class RacingController {
         for(let round = 0; round < this.game.tryCount; round ++){
             this.game.runRound();
         }
+
+        const winnerList = this.game.getWinners();
     }
 }
