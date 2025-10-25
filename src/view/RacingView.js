@@ -16,4 +16,9 @@ export class RacingView{
         );
         return tryCountInput;
     }
+
+    printEachCarPosition(car) {
+        const distanceString = '-'.repeat(car.position);
+        Console.print(`${car.name} : ${distanceString}`);
+    }
 }
