@@ -11,7 +11,5 @@ export class Car {
         if(randomNumber >= 4){
             this.position ++;
         }
-
-        console.log(this.position);
     }
 }
