@@ -10,4 +10,11 @@ export class RacingGame {
             this.carList.push(newCar);
         }
     }
+
+    runRound() {
+        for(let carIdx = 0; carIdx < this.carList.length; carIdx++){
+            this.carList[carIdx].move();
+        }
+    }
+
 }
