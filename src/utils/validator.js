@@ -15,3 +15,10 @@ export function validateCarNameNotNull (carList) {
         }
     }
 }
+
+export function validateCarNameUnique (carList) {
+    const carSet = new Set(carList);
+    if(carSet.size !== carList.length){
+        throw new Error(errorMessage.CAR_NAME_NOT_UNIQUE);
+    }
+}
