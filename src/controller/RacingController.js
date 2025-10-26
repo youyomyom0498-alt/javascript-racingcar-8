@@ -1,4 +1,6 @@
 import { RacingGame } from "../model/RacingGame.js";
+import { exceptionHandler } from "../utils/exceptionHandler.js";
+import { validateCarNamesLength } from "../utils/validator.js";
 import { RacingView } from "../view/RacingView.js";
 
 export class RacingController {
@@ -8,11 +10,20 @@ export class RacingController {
     }
 
     async startGame() {
-        const carInput = await this.view.inputCarNames();
-        const tryCountInput = await this.view.inputTryCount();
+        try{
+            const carInput = await this.view.inputCarNames();
+            const carNameList = carInput.split(',');
 
-        this.game = new RacingGame(carInput.split(','), Number(tryCountInput));
-        this.runGame();
+            validateCarNamesLength(carNameList);
+
+            const tryCountInput = await this.view.inputTryCount();
+
+            this.game = new RacingGame(carNameList, Number(tryCountInput));
+            this.runGame();
+        } catch (error){
+            exceptionHandler(error);
+        }
+
     }
 
     runGame () {
