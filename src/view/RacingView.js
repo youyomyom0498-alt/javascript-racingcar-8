@@ -18,7 +18,8 @@ export class RacingView{
     }
     
     printExecutionResultTitle(){
-        Console.print('\n실행 결과');
+        Console.print('');
+        Console.print('실행 결과');
     }
 
     printEachCarPosition(car) {
@@ -30,11 +31,12 @@ export class RacingView{
         for(const car of carList){
             this.printEachCarPosition(car);
         }
-        Console.print('\n');
+        Console.print('');
     }
 
     printWinners(winnerList){
         const winnerNameList = winnerList.map(car => car.name);
+        Console.print('');
         Console.print(`최종 우승자 : ${winnerNameList.join(', ')}`);
     }
 }
