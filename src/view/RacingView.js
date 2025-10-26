@@ -36,7 +36,6 @@ export class RacingView{
 
     printWinners(winnerList){
         const winnerNameList = winnerList.map(car => car.name);
-        Console.print('');
         Console.print(`최종 우승자 : ${winnerNameList.join(', ')}`);
     }
 }
