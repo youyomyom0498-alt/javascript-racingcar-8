@@ -1,6 +1,6 @@
 import { RacingGame } from "../model/RacingGame.js";
 import { exceptionHandler } from "../utils/exceptionHandler.js";
-import { validateCarNameNotNull, validateCarNamesLength, validateCarNameUnique, validateTryCountNumber } from "../utils/validator.js";
+import { validateCarNameNotNull, validateCarNamesLength, validateCarNameUnique, validateTryCountNumber, validateTryCountPositive } from "../utils/validator.js";
 import { RacingView } from "../view/RacingView.js";
 
 export class RacingController {
@@ -19,10 +19,12 @@ export class RacingController {
             validateCarNameUnique(carNameList);
 
             const tryCountInput = await this.view.inputTryCount();
+            const tryCount = Number(tryCountInput);
 
-            validateTryCountNumber(Number(tryCountInput));
+            validateTryCountNumber(tryCount);
+            validateTryCountPositive(tryCount)
 
-            this.game = new RacingGame(carNameList, Number(tryCountInput));
+            this.game = new RacingGame(carNameList, tryCount);
             this.runGame();
         } catch (error){
             exceptionHandler(error);

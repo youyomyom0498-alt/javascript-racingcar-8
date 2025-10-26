@@ -28,3 +28,9 @@ export function validateTryCountNumber (tryCount) {
         throw new Error(errorMessage.TRY_COUNT_IS_NAN);
     }
 }
+
+export function validateTryCountPositive (tryCount) {
+    if(tryCount <= 0){
+        throw new Error(errorMessage.TRY_COUNT_POSITIVE);
+    }
+}
