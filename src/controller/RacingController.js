@@ -1,6 +1,6 @@
 import { RacingGame } from "../model/RacingGame.js";
 import { exceptionHandler } from "../utils/exceptionHandler.js";
-import { validateCarNamesLength } from "../utils/validator.js";
+import { validateCarNameNotNull, validateCarNamesLength } from "../utils/validator.js";
 import { RacingView } from "../view/RacingView.js";
 
 export class RacingController {
@@ -15,6 +15,7 @@ export class RacingController {
             const carNameList = carInput.split(',');
 
             validateCarNamesLength(carNameList);
+            validateCarNameNotNull(carNameList);
 
             const tryCountInput = await this.view.inputTryCount();
 

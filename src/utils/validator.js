@@ -7,3 +7,11 @@ export function validateCarNamesLength (carList) {
         }
     }
 }
+
+export function validateCarNameNotNull (carList) {
+    for(const carName of carList){
+        if(!carName){
+            throw new Error(errorMessage.CAR_NAME_NULL);
+        }
+    }
+}
