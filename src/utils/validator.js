@@ -24,7 +24,7 @@ export function validateCarNameUnique (carList) {
 }
 
 export function validateTryCountNumber (tryCount) {
-    if(isNaN(tryCount)){
+    if(isNaN(tryCount) || !Number.isInteger(tryCount)){
         throw new Error(errorMessage.TRY_COUNT_IS_NAN);
     }
 }
