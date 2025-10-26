@@ -22,3 +22,9 @@ export function validateCarNameUnique (carList) {
         throw new Error(errorMessage.CAR_NAME_NOT_UNIQUE);
     }
 }
+
+export function validateTryCountNumber (tryCount) {
+    if(isNaN(tryCount)){
+        throw new Error(errorMessage.TRY_COUNT_IS_NAN);
+    }
+}
