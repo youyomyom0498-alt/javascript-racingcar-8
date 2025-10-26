@@ -1,3 +1,3 @@
 export function exceptionHandler(error) {
-    throw `[ERROR] ${error.message}`;
+    throw new Error(`[ERROR] ${error.message}`);
 }
